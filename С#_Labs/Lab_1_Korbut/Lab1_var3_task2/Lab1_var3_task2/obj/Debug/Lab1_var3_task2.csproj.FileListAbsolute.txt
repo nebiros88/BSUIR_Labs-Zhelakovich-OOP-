@@ -1,0 +1,7 @@
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\bin\Debug\Lab1_var3_task2.exe.config
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\bin\Debug\Lab1_var3_task2.exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\bin\Debug\Lab1_var3_task2.pdb
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\obj\Debug\Lab1_var3_task2.csprojAssemblyReference.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\obj\Debug\Lab1_var3_task2.csproj.CoreCompileInputs.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\obj\Debug\Lab1_var3_task2.exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab1_var3_task2\Lab1_var3_task2\obj\Debug\Lab1_var3_task2.pdb

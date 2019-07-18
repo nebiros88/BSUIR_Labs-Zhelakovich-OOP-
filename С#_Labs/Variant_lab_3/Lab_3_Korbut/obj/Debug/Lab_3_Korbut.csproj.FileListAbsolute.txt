@@ -1,0 +1,6 @@
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_3_Korbut\Lab_3_Korbut\bin\Debug\Lab_3_Korbut.exe.config
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_3_Korbut\Lab_3_Korbut\bin\Debug\Lab_3_Korbut.exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_3_Korbut\Lab_3_Korbut\bin\Debug\Lab_3_Korbut.pdb
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_3_Korbut\Lab_3_Korbut\obj\Debug\Lab_3_Korbut.csproj.CoreCompileInputs.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_3_Korbut\Lab_3_Korbut\obj\Debug\Lab_3_Korbut.exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_3_Korbut\Lab_3_Korbut\obj\Debug\Lab_3_Korbut.pdb

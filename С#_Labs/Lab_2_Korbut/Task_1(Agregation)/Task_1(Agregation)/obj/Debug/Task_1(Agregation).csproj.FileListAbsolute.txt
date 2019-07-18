@@ -1,0 +1,7 @@
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\bin\Debug\Task_1(Agregation).exe.config
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\bin\Debug\Task_1(Agregation).exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\bin\Debug\Task_1(Agregation).pdb
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\obj\Debug\Task_1(Agregation).csprojAssemblyReference.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\obj\Debug\Task_1(Agregation).csproj.CoreCompileInputs.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\obj\Debug\Task_1(Agregation).exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_2_Korbut\Task_1(Agregation)\Task_1(Agregation)\obj\Debug\Task_1(Agregation).pdb
