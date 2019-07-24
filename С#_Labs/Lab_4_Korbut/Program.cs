@@ -9,7 +9,7 @@ namespace Lab_4_Korbut
 {
     class Program
     {
-        const string dirName = @"D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut";
+        const string dirName = @"C:\Users\Korbut\Documents\Directory_for_4_lab";
 
         // Устанавливает текущий диск/каталог (по умолчанию конст переменная с имене dirName)
         static void MakeCurrent()
@@ -110,18 +110,30 @@ namespace Lab_4_Korbut
 
         // Удаление каталога по номеру если он пустой
 
+        static void DeleteDirectory(string location)
+        {
+            foreach (var directory in Directory.GetDirectories(location))
+            {
+                if(Directory.GetFiles(directory).Length == 0 && Directory.GetDirectories(directory).Length == 0)
+                {
+                    Directory.Delete(directory);
+                    Console.WriteLine("\nДиректория спешно удалена!");
+                }
+            }
+        }
+
         static void DeleteDirIfEmpty()
         {
             string delDirName = null;
             int contCondition = 0;
-            dynamic dirNumber = 0;
+            int dirNumber = 0;
             string[] dirs = Directory.GetDirectories(dirName);
             DirectoryInfo dirInfo = new DirectoryInfo(dirName);
             do
             {
                 Console.WriteLine("\nВведите номер директории для удаления");
                 dirNumber = int.Parse(Console.ReadLine());
-                if ((int)dirNumber < 0 || (int)dirNumber > dirs.Length)
+                if (dirNumber < 0 || dirNumber > dirs.Length)
                 {
                     Console.WriteLine("\nВведите другой номер директории для удаления!");
                     contCondition = 0;
@@ -129,8 +141,14 @@ namespace Lab_4_Korbut
                 else
                 {
                     contCondition = 1;
-                    delDirName = dirs[(dirNumber];
-                    dirInfo.Delete();
+                    for (int i = 0; i < dirs.Length; i++)
+                    {
+                        if (dirNumber == i)
+                        {
+                            delDirName = dirs[i];
+                        }
+                        DeleteDirectory(delDirName);
+                    }
                 }
             }
             while (contCondition == 0);
@@ -179,6 +197,7 @@ namespace Lab_4_Korbut
                         CreateDirectory();
                         break;
                     case 6:
+                        DeleteDirIfEmpty();
                         break;
                     case 7:
                         break;

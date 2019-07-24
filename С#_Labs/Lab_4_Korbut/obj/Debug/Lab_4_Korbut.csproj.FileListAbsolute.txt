@@ -12,3 +12,10 @@ D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.csprojAssembl
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.csproj.CoreCompileInputs.cache
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.exe
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.pdb
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\bin\Debug\Lab_4_Korbut.exe.config
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\bin\Debug\Lab_4_Korbut.exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\bin\Debug\Lab_4_Korbut.pdb
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.csprojAssemblyReference.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.csproj.CoreCompileInputs.cache
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.exe
+C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\obj\Debug\Lab_4_Korbut.pdb
