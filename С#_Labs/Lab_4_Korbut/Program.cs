@@ -9,7 +9,7 @@ namespace Lab_4_Korbut
 {
     class Program
     {
-        const string dirName = @"C:\Users\Korbut\Documents\Directory_for_4_lab";
+        const string dirName = @"D:\BSUIR\Directory_for_lab_4";
 
         // Устанавливает текущий диск/каталог (по умолчанию конст переменная с имене dirName)
         static void MakeCurrent()
@@ -38,11 +38,11 @@ namespace Lab_4_Korbut
 
         static void ShowAllFiles()
         {
-            string[] dirs = Directory.GetFiles(dirName);
+            string[] files = Directory.GetFiles(dirName);
             Console.WriteLine("*****Список всех файлов (пронумерованный)*****");
-            for (int i = 0; i < dirs.Length; i++)
+            for (int i = 0; i < files.Length; i++)
             {
-                Console.WriteLine("{0} - {1}", i, dirs[i]);
+                Console.WriteLine("{0} - {1}", i, files[i]);
             }
             Console.WriteLine("****************Завершено************************");
         }
@@ -109,50 +109,85 @@ namespace Lab_4_Korbut
         }
 
         // Удаление каталога по номеру если он пустой
-
-        static void DeleteDirectory(string location)
-        {
-            foreach (var directory in Directory.GetDirectories(location))
-            {
-                if(Directory.GetFiles(directory).Length == 0 && Directory.GetDirectories(directory).Length == 0)
-                {
-                    Directory.Delete(directory);
-                    Console.WriteLine("\nДиректория спешно удалена!");
-                }
-            }
-        }
-
         static void DeleteDirIfEmpty()
         {
-            string delDirName = null;
-            int contCondition = 0;
             int dirNumber = 0;
             string[] dirs = Directory.GetDirectories(dirName);
-            DirectoryInfo dirInfo = new DirectoryInfo(dirName);
-            do
+            while(true)
             {
                 Console.WriteLine("\nВведите номер директории для удаления");
                 dirNumber = int.Parse(Console.ReadLine());
                 if (dirNumber < 0 || dirNumber > dirs.Length)
                 {
                     Console.WriteLine("\nВведите другой номер директории для удаления!");
-                    contCondition = 0;
+                    continue;
                 }
-                else
-                {
-                    contCondition = 1;
-                    for (int i = 0; i < dirs.Length; i++)
-                    {
-                        if (dirNumber == i)
-                        {
-                            delDirName = dirs[i];
-                        }
-                        DeleteDirectory(delDirName);
-                    }
-                }
+                else break;
+
             }
-            while (contCondition == 0);
+            DirectoryInfo dir = new DirectoryInfo(dirs[dirNumber]);
+            dir.Delete();
+            Console.WriteLine("\nКаталог успешно удален");
         }
+        // Удалить файлы с указанными номерами
+        static void DeleteFiles()
+        {
+            int filesQuantityToDelete = 0;
+            int numberToDelete = 0;
+            string[] files = Directory.GetFiles(dirName);
+            while (true)
+            {
+                Console.WriteLine("\nВведите количество файлов для удаления");
+                filesQuantityToDelete = int.Parse(Console.ReadLine());
+                if (filesQuantityToDelete < 0 || filesQuantityToDelete > files.Length - 1)
+                {
+                    Console.WriteLine("\nКоличество файлов для удаления не соответствует количеству существующих файлов");
+                    continue;
+                }
+                else break;
+            }
+            for (int i = 0; i < filesQuantityToDelete; i++)
+            {
+                while (true)
+                {
+                    Console.WriteLine("\nВведите номер удаляемого файла");
+                    numberToDelete = int.Parse(Console.ReadLine());
+                    if (numberToDelete < 0 || numberToDelete > files.Length)
+                    {
+                        Console.WriteLine("\nНе верный номер файла");
+                        continue;
+                    }
+                    else break;
+                }
+                FileInfo delFile = new FileInfo(files[numberToDelete]);
+                delFile.Delete();
+                Console.WriteLine("\nФайл успешно удален");
+            }
+        }
+
+        // Вывести список всех файлов с указанной датой создания(ищет в текущем каталоге и подкаталогах)
+
+        static void ShowFilesByDate()
+        {
+            int i = 0;
+            Console.WriteLine("\nВведите дату создания файлов для их отображения");
+            var fileDate = Console.ReadLine();
+            string[] dirs = Directory.GetDirectories(dirName);
+            var myDirs = new List<DirectoryInfo>();
+            var files = new List<string>();
+            foreach (var dir in dirs)
+            {
+                files.Add(dir);
+            }
+            foreach (string file in files)
+            {
+                Console.WriteLine("\n{0} - {1}", i, file);
+                i++;
+            }
+            
+
+        }
+
         static void Main(string[] args)
         {
             int userChoice = 0;
@@ -200,6 +235,7 @@ namespace Lab_4_Korbut
                         DeleteDirIfEmpty();
                         break;
                     case 7:
+                        DeleteFiles();
                         break;
                     case 8:
                         break;
