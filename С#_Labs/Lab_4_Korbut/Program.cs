@@ -167,25 +167,27 @@ namespace Lab_4_Korbut
 
         // Вывести список всех файлов с указанной датой создания(ищет в текущем каталоге и подкаталогах)
 
+        static void GetFromDirect(string directory, List<string> allFiles)
+        {
+            string[] subDirs = Directory.GetDirectories(directory);
+            allFiles.AddRange(Directory.GetFiles(directory));
+            foreach (string subdirectory in subDirs)
+            {
+                GetFromDirect(subdirectory, allFiles);
+            }
+
+        }
         static void ShowFilesByDate()
         {
-            int i = 0;
-            Console.WriteLine("\nВведите дату создания файлов для их отображения");
-            var fileDate = Console.ReadLine();
-            string[] dirs = Directory.GetDirectories(dirName);
-            var myDirs = new List<DirectoryInfo>();
-            var files = new List<string>();
-            foreach (var dir in dirs)
+            List<string> AllFiles = new List<string>();
+            Console.WriteLine("\nВведите дату создания файлов для их отображения в формате (год - месяц - день )");
+            DateTime fileDate = DateTime.Parse(Console.ReadLine());
+            GetFromDirect(dirName, AllFiles);
+            foreach (string file in AllFiles)
             {
-                files.Add(dir);
+                
+                Console.WriteLine(file);
             }
-            foreach (string file in files)
-            {
-                Console.WriteLine("\n{0} - {1}", i, file);
-                i++;
-            }
-            
-
         }
 
         static void Main(string[] args)
@@ -238,6 +240,7 @@ namespace Lab_4_Korbut
                         DeleteFiles();
                         break;
                     case 8:
+                        ShowFilesByDate();
                         break;
                     case 9:
                         break;
