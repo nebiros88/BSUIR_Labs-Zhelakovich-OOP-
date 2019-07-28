@@ -180,7 +180,7 @@ namespace Lab_4_Korbut
         static void ShowFilesByDate()
         {
             List<string> AllFiles = new List<string>();
-            Console.WriteLine("\nВведите дату создания файлов для их отображения  - формат ввода даты (год - месяц - день )");
+            Console.WriteLine("\nВведите дату создания файлов для их отображения  - формат ввода даты (год.месяц.день )");
             DateTime fileDate =DateTime.Parse(Console.ReadLine());
             GetFromDirect(dirName, AllFiles);
             foreach (string file in AllFiles)
@@ -277,7 +277,6 @@ namespace Lab_4_Korbut
                 }
             }
             while (userChoice != 0);
-
         }
     }
 }
