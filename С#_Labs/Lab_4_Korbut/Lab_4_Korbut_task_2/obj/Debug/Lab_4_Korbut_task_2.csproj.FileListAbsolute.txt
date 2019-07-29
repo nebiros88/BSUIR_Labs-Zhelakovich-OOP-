@@ -5,7 +5,6 @@ C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_
 C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\bin\Debug\Lab_4_Korbut_task_2.pdb
 C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\obj\Debug\Lab_4_Korbut_task_2.exe
 C:\Users\Korbut\Documents\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\obj\Debug\Lab_4_Korbut_task_2.pdb
-<<<<<<< HEAD
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\bin\Debug\Lab_4_Korbut_task_2.exe.config
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\bin\Debug\Lab_4_Korbut_task_2.exe
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\bin\Debug\Lab_4_Korbut_task_2.pdb
@@ -13,5 +12,3 @@ D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\obj\Debug\Lab_4_
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\obj\Debug\Lab_4_Korbut_task_2.csproj.CoreCompileInputs.cache
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\obj\Debug\Lab_4_Korbut_task_2.exe
 D:\BSUIR\Корбут\С#_Labs\Lab_4_Korbut\Lab_4_Korbut_task_2\obj\Debug\Lab_4_Korbut_task_2.pdb
-=======
->>>>>>> 781a3b03a60d301778708f829cb2db6f1acfce6a
