@@ -9,7 +9,7 @@ namespace Lab_4_Korbut
 {
     class Program
     {
-        const string dirName = @"D:\BSUIR\Directory_for_lab_4";
+        const string dirName = @"C:\Users\Korbut\Documents\BSUIR\Корбут\For_lab_4_C#";
 
         // Устанавливает текущий диск/каталог (по умолчанию конст переменная с имене dirName)
         static void MakeCurrent()
@@ -180,13 +180,41 @@ namespace Lab_4_Korbut
         static void ShowFilesByDate()
         {
             List<string> AllFiles = new List<string>();
-            Console.WriteLine("\nВведите дату создания файлов для их отображения в формате (год - месяц - день )");
-            DateTime fileDate = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine("\nВведите дату создания файлов для их отображения  - формат ввода даты (год.месяц.день )");
+            DateTime fileDate =DateTime.Parse(Console.ReadLine());
             GetFromDirect(dirName, AllFiles);
             foreach (string file in AllFiles)
             {
-                
-                Console.WriteLine(file);
+                FileInfo file1 = new FileInfo(file);
+                string dateCreation = file1.CreationTime.ToShortDateString();
+                string tempDate = fileDate.ToShortDateString();
+                if (dateCreation == tempDate)
+                {
+                    Console.WriteLine(file1.Name);
+                }
+            }
+        }
+
+        // Выводит список всех текстовых файлов в которых содержится указанный текст (ищет в текущих каталогах и подкаталогах)
+
+        static void SearchByText()
+        {
+            string textToSearch = null;
+            Console.WriteLine("\nВведите текст для поиска в файлов его содержащих");
+            textToSearch = Console.ReadLine();
+            List<string> Files = new List<string>();
+            GetFromDirect(dirName, Files);
+            foreach (string file in Files)
+            {
+                using (StreamReader sr = new StreamReader(file))
+                {
+                    string temp = sr.ReadToEnd();
+                    if (temp.Contains(textToSearch))
+                    {
+                        FileInfo tempFile = new FileInfo(file);
+                        Console.WriteLine("\nВ файле с именем {0} содержится введенный вами текст", tempFile.Name);
+                    }
+                }
             }
         }
 
@@ -243,12 +271,12 @@ namespace Lab_4_Korbut
                         ShowFilesByDate();
                         break;
                     case 9:
+                        SearchByText();
                         break;
                     default: return;
                 }
             }
             while (userChoice != 0);
-
         }
     }
 }
