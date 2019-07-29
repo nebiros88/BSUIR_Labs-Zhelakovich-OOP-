@@ -82,5 +82,15 @@ namespace Lab_4_Korbut_task_2
                 Console.WriteLine(e.Message);
             }
         }
+
+        // Экземплярный метод для сохранения всей информации о обьекте в бинарный файл
+        public void WriteBinaryInfoFile(string fileName)
+        {
+            string newFileFolder = @"D:\BSUIR\Directory_for_lab_4/" + fileName + ".txt";
+            using (BinaryWriter bw = new BinaryWriter(File.Open(newFileFolder, FileMode.OpenOrCreate)));
+            {
+               
+            }
+        }
     }
 }
