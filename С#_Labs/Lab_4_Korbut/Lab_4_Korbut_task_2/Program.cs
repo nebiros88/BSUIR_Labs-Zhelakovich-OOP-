@@ -41,9 +41,8 @@ namespace Lab_4_Korbut_task_2
                 }
                 else break;
             }
-            Car newCar = new Car();
+            Car newCar = new Car("FORD", 6);
             newCar.wheelsNumber = 6;
-            newCar.seats = 7;
             Type t = newCar.GetType();
             //Вызываем статический метод с записю инфо о классе в текстовый файл
             Car.WriteInfoFile(fileName, t);
@@ -59,6 +58,7 @@ namespace Lab_4_Korbut_task_2
                 }
                 else break;
             }
+            newCar.WriteBinaryInfoFile(fileName);
         }
     }
 }

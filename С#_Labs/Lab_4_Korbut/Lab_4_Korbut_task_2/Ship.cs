@@ -12,7 +12,7 @@ namespace Lab_4_Korbut_task_2
         public Ship(int wheelsNumber,int seats, int displacement)
         {
             this.wheelsNumber = wheelsNumber;
-            this.seats =seats;
+            this.seats = seats;
             this.displacement = displacement;
         }
         public override string Loading(int fuel, int electricity)
@@ -21,7 +21,7 @@ namespace Lab_4_Korbut_task_2
             if (electricity > 0) return "Для заправки нужен только безин";
             return "Надо заправиться";
         }
-        public override void print()
+        public override void Print()
         {
             Console.WriteLine("Корабль - обьект класса транспорт со след  полями ");
             Console.WriteLine("Тип двигателя -" + engineType);

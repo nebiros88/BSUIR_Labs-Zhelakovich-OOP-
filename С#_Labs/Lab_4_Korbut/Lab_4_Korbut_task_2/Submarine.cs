@@ -21,7 +21,7 @@ namespace Lab_4_Korbut_task_2
             if (fuel > 0) return "Для заправки подходит только электричество";
             return "Надо заправиться";
         }
-        public override void print()
+        public override void Print()
         {
             Console.WriteLine("Подводная лодка - обьект класса транспорт со след  полями ");
             Console.WriteLine("Тип двигателя -" + engineType);

@@ -10,9 +10,10 @@ namespace Lab_4_Korbut_task_2
 {
     class Car : Transport
     {
-        public Car()
+        public Car(string carName, int carSeats)
         {
-            seats = 4; 
+            this.name = carName;
+            this.seats = carSeats;
         }
 
         new public void Identify()                          //скрытие метода
@@ -32,7 +33,7 @@ namespace Lab_4_Korbut_task_2
             return "Надо заправиться";
 
         }
-        public override void print()
+        public override void Print()
         {
             Console.WriteLine("машина - обьект класса транспорт с следующими  полями ");
             Console.WriteLine("Тип двигателя -" + engineType);
@@ -42,7 +43,7 @@ namespace Lab_4_Korbut_task_2
         // Метод записи информации о классе в текстовый файл имя которого передается параметром
         public static void WriteInfoFile(string fileName, Type t)
         {
-            string newFileFolder = @"D:\BSUIR\Directory_for_lab_4/" + fileName + ".txt";
+            string newFileFolder = @"C:\Users\Korbut\Documents\Directory_for_4_lab/" + fileName + ".txt";
             try
             {
                 using (StreamWriter sw = new StreamWriter(newFileFolder, true, System.Text.Encoding.Default))
@@ -86,11 +87,14 @@ namespace Lab_4_Korbut_task_2
         // Экземплярный метод для сохранения всей информации о обьекте в бинарный файл
         public void WriteBinaryInfoFile(string fileName)
         {
-            string newFileFolder = @"D:\BSUIR\Directory_for_lab_4/" + fileName + ".txt";
-            using (BinaryWriter bw = new BinaryWriter(File.Open(newFileFolder, FileMode.OpenOrCreate)));
-            {
-               
-            }
+            string newFileFolder = @"C:\Users\Korbut\Documents\Directory_for_4_lab/" + fileName + ".bin";
+            FileStream fs = new FileStream(newFileFolder, FileMode.OpenOrCreate, FileAccess.Write);
+            BinaryWriter bw = new BinaryWriter(fs);
+            bw.Write(name);
+            bw.Write(seats);
+            bw.Write(engineType);
+            bw.Write(wheelsNumber);
+            bw.Close();
         }
     }
 }

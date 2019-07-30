@@ -10,11 +10,16 @@ namespace Lab_4_Korbut_task_2
     {
         public int wings = 2;
 
+        public Aircraft(string name, int seats) : base(name, seats)
+        {
+            this.name = name;
+            this.seats = seats;
+        }
         new public void Identify()
         {
            Console.WriteLine("Я самолет, я летаю");
         }
-        public override void print()
+        public override void Print()
         {
             Console.WriteLine("Самолет - обьект класса транспорт со след  полями ");
             Console.WriteLine("Тип двигателя -" + engineType);

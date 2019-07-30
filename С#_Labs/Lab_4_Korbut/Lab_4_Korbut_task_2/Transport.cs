@@ -8,6 +8,7 @@ namespace Lab_4_Korbut_task_2
 {
     abstract class Transport
     {
+        public string name;
         public string engineType;           //тип двигателя(бензин,дизель)
         public int wheelsNumber;            //количество колес
         public int seats;                   //количество мест
@@ -60,7 +61,7 @@ namespace Lab_4_Korbut_task_2
 
         public abstract string Loading(int fuel, int electricity);
 
-        public virtual void print()
+        public virtual void Print()
         {
             Console.WriteLine("Обьект класса транспорт с следующими  полями ");
             Console.WriteLine("Тип двигателя -" + engineType);
