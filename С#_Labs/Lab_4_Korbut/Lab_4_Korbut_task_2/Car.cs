@@ -43,7 +43,7 @@ namespace Lab_4_Korbut_task_2
         // Метод записи информации о классе в текстовый файл имя которого передается параметром
         public static void WriteInfoFile(string fileName, Type t)
         {
-            string newFileFolder = @"C:\Users\Korbut\Documents\Directory_for_4_lab/" + fileName + ".txt";
+            string newFileFolder = @"d:\BSUIR\Directory_for_lab_4\" + fileName + ".txt";
             try
             {
                 using (StreamWriter sw = new StreamWriter(newFileFolder, true, System.Text.Encoding.Default))
@@ -77,6 +77,7 @@ namespace Lab_4_Korbut_task_2
                     }
                     sw.Close();
                 }
+                Console.WriteLine("+++++ Текстовый файл успешно создан +++++");
             }
             catch (Exception e)
             {
@@ -87,7 +88,7 @@ namespace Lab_4_Korbut_task_2
         // Экземплярный метод для сохранения всей информации о обьекте в бинарный файл
         public void WriteBinaryInfoFile(string fileName)
         {
-            string newFileFolder = @"C:\Users\Korbut\Documents\Directory_for_4_lab/" + fileName + ".bin";
+            string newFileFolder = @"d:\BSUIR\Directory_for_lab_4\" + fileName + ".bin";
             FileStream fs = new FileStream(newFileFolder, FileMode.OpenOrCreate, FileAccess.Write);
             BinaryWriter bw = new BinaryWriter(fs);
             bw.Write(name);
@@ -95,6 +96,7 @@ namespace Lab_4_Korbut_task_2
             bw.Write(engineType);
             bw.Write(wheelsNumber);
             bw.Close();
+            Console.WriteLine("+++++ Бинарный файл успешно создан +++++");
         }
     }
 }
