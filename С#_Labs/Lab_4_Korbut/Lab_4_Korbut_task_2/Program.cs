@@ -28,21 +28,22 @@ namespace Lab_4_Korbut_task_2
         }
 
         // Запрос пользавателю на выбор имени для создаваемого файла
-        static string RequestFileName(string userFileName)
+        static string RequestFileName()
         {
+            string tempFile = null;
             while (true)
             {
                 Console.WriteLine("\nВведите имя создаваемого файла");
-                userFileName = Console.ReadLine();
-                if (FileNameCheckTxt(userFileName))
+                tempFile = Console.ReadLine();
+                if (FileNameCheckTxt(tempFile))
                 {
                     Console.WriteLine("\nФайл с таким именем уже существует! Попробуйте выбрать другое имя для файла");
                     continue;
                 }
-                else break;
+                break;
             }
             Console.WriteLine("******Имя файла успешно задано*****");
-            return userFileName;
+            return tempFile;
         }
         static void Main(string[] args)
         {
@@ -70,16 +71,25 @@ namespace Lab_4_Korbut_task_2
                 switch (userChoice)
                 {
                     case 1:
-                        userFileName = RequestFileName(userFileName);
+                        userFileName = RequestFileName();
                         Car.WriteInfoFile(userFileName, t);
                         break;
                     case 2:
-                        userFileName = RequestFileName(userFileName);
+                        userFileName = RequestFileName();
                         newCar.WriteBinaryInfoFile(userFileName);
                         break;
                     case 3:
+                        Car fileCar = Car.ReadFromBinaryToCreate(userFileName);
+                        Console.WriteLine("+++ Создан обьект +++");
+                        fileCar.Print();
+                        Console.WriteLine("---------------------");
                         break;
                     case 4:
+                        Car carForSerialisation = new Car("Dodge", 5);
+                        userFileName = RequestFileName();
+                        carForSerialisation.Serialize(userFileName);
+                        Car deserialiseCar = null;
+                        Car.DeSerialize(deserialiseCar, userFileName);
                         break;
                     default: return;
                 }

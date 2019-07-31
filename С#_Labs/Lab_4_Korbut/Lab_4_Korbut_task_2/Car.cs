@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Lab_4_Korbut_task_2
 {
+    [Serializable]
     class Car : Transport
     {
         public Car(string carName, int carSeats)
@@ -36,6 +38,7 @@ namespace Lab_4_Korbut_task_2
         public override void Print()
         {
             Console.WriteLine("машина - обьект класса транспорт с следующими  полями ");
+            Console.WriteLine("Имя машины - " + name);
             Console.WriteLine("Тип двигателя -" + engineType);
             Console.WriteLine("Количестов колес -" + wheelsNumber);
             Console.WriteLine("Количество мест -" + seats);
@@ -98,5 +101,67 @@ namespace Lab_4_Korbut_task_2
             bw.Close();
             Console.WriteLine("+++++ Бинарный файл успешно создан +++++");
         }
+
+        // Метод для создания обьекта на основе считывания данныз из бинарного файла
+        public static Car ReadFromBinaryToCreate(string fileName)
+        {
+            string newFileFolder = @"d:\BSUIR\Directory_for_lab_4\" + fileName + ".bin";
+            FileStream fs = new FileStream(newFileFolder, FileMode.OpenOrCreate, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            string name = br.ReadString();
+            int seats = br.ReadInt32();
+            string engineType = br.ReadString();
+            int wheelsNumber = br.ReadInt32();
+            Car newCar = new Car(name, seats);
+            return newCar;
+        }
+
+        // Метод сериализующий укащанный обьект
+        public void Serialize(string fileName)
+        {
+            string fileFolder = @"d:\BSUIR\Directory_for_lab_4\" + fileName + ".dat";
+            FileStream fs = new FileStream(fileFolder, FileMode.Create);
+            BinaryFormatter fm = new BinaryFormatter();
+            try
+            {
+                fm.Serialize(fs, this);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Сериализация не удалась по следующей причине" + e.Message);
+                throw;
+            }
+            finally
+            {
+                fs.Close();
+                Console.WriteLine("Сериализация обьекта прощла успешно");
+            }
+        }
+
+        // Метод для десериализации выбранного обьект
+        public static void DeSerialize(Car newCar, string fileName)
+        {
+            string fileFolder = @"d:\BSUIR\Directory_for_lab_4\" + fileName + ".dat";
+            FileStream fs = new FileStream(fileFolder, FileMode.Open);
+            BinaryFormatter fm = new BinaryFormatter();
+            try
+            {
+                newCar = (Car)fm.Deserialize(fs);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Десериализация не выполнена по причине - " + e.Message);
+            }
+            finally
+            {
+                fs.Close();
+                Console.WriteLine("******************************");
+                Console.WriteLine("Десериализация прошла успешно ");
+                Console.WriteLine("Создан обьект");
+                newCar.Print();
+                Console.WriteLine("******************************");
+            }
+        }
+
     }
 }

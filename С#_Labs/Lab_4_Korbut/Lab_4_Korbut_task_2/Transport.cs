@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4_Korbut_task_2
 {
+    [Serializable]
     abstract class Transport
     {
         public string name;
