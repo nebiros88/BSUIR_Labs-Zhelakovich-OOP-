@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Lab_4_Korbut_task_3
 {
@@ -58,11 +59,20 @@ namespace Lab_4_Korbut_task_3
         {
             Console.WriteLine("\nВведите что следует удалить...");
             string userTxt = Console.ReadLine();
-            List<int> index = null;
-            string temp = sb.ToString();
-            
-           
+            Regex re = new Regex(userTxt);
+            while (true)
+            {
+                string temp = sb.ToString();
+                MatchCollection theMatches = re.Matches(temp);
+                Match theMatch = re.Match(temp);
+                int index = theMatch.Index;
+                int size = theMatch.Length;
+                sb.Remove(index, size);
+                if (theMatches.Count > 0) continue;
+                else break;
+            }
         }
+
         static void Main(string[] args)
         {
             StringBuilder sb = null;
@@ -94,6 +104,7 @@ namespace Lab_4_Korbut_task_3
                         RewriteSymbol(sb);
                         break;
                     case 5:
+                        DeleteMatches(sb);
                         break;
                     default: return;
                 }
