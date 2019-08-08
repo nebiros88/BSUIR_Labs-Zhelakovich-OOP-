@@ -1,0 +1,7 @@
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\obj\Debug\Lab_5_Korbut.csprojAssemblyReference.cache
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\obj\Debug\Lab_5_Korbut.csproj.CoreCompileInputs.cache
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\bin\Debug\Lab_5_Korbut.exe.config
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\bin\Debug\Lab_5_Korbut.exe
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\bin\Debug\Lab_5_Korbut.pdb
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\obj\Debug\Lab_5_Korbut.exe
+D:\BSUIR\Корбут\С#_Labs\Lab_5_Korbut\obj\Debug\Lab_5_Korbut.pdb
