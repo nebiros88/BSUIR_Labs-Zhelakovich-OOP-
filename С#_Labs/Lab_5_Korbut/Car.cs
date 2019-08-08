@@ -43,21 +43,15 @@ namespace Lab_5_Korbut
 
         public static bool CheckEngine(Car _car)
         {
-            if (_car.maxSpeed - _car.currentSpeed >= 10)
-            {
-                Console.WriteLine("\nАвтомобиль продолжает движение!");
-            }
-            else if (_car.currentSpeed == _car.maxSpeed)
-            {
-                Console.WriteLine("\nДостигнута максимальная скорость! Двигатель выйдет из строя!");
-            }
+            if (_car.maxSpeed - _car.currentSpeed > 10)  Console.WriteLine("\nАвтомобиль продолжает движение!");
+            else if (_car.maxSpeed - _car.currentSpeed <= 10) Console.WriteLine("\nАвтомобиль продолжает движение! Высокая скорость! ");
+            else if (_car.currentSpeed == _car.maxSpeed) Console.WriteLine("\nДостигнута максимальная скорость! Двигатель выйдет из строя!");
             else if (_car.currentSpeed > _car.maxSpeed)
             {
                 _car.engineState = false;
                 Console.WriteLine("\nДвигатель вышел из строя!");
             }
             return _car.engineState;
-
         }
         public void Accelerate( int acceleration)
         {
@@ -65,6 +59,11 @@ namespace Lab_5_Korbut
             {
                 Console.WriteLine("Автомобиль с именем {0} ускорился на {1}км/ч. Текущая скорость автомобиля составляет - {2}км/ч", name, acceleration, currentSpeed);
                 CheckEngine(this);
+                if (currentSpeed == 90)                     
+                {
+
+                }
+
             }
         }
     }
