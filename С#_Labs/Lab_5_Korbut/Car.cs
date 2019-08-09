@@ -41,15 +41,17 @@ namespace Lab_5_Korbut
             this.maxSpeed = _maxSpeed;
         }
 
+        public delegate void CarStateHandler(string message);   // Обьявление делегата
+        public event CarStateHandler DamageEngine;              // Событие возникающее при поломке двигателя
+
         public static bool CheckEngine(Car _car)
         {
             if (_car.maxSpeed - _car.currentSpeed > 10)  Console.WriteLine("\nАвтомобиль продолжает движение!");
-            else if (_car.maxSpeed - _car.currentSpeed <= 10) Console.WriteLine("\nАвтомобиль продолжает движение! Высокая скорость! ");
-            else if (_car.currentSpeed == _car.maxSpeed) Console.WriteLine("\nДостигнута максимальная скорость! Двигатель выйдет из строя!");
-            else if (_car.currentSpeed > _car.maxSpeed)
+            if (_car.maxSpeed - _car.currentSpeed <= 10) Console.WriteLine("\nАвтомобиль продолжает движение! Высокая скорость! ");
+            if (_car.currentSpeed == _car.maxSpeed) Console.WriteLine("\nДостигнута максимальная скорость! Двигатель выйдет из строя!");
+            if (_car.currentSpeed > _car.maxSpeed)
             {
                 _car.engineState = false;
-                Console.WriteLine("\nДвигатель вышел из строя!");
             }
             return _car.engineState;
         }
@@ -59,11 +61,13 @@ namespace Lab_5_Korbut
             {
                 Console.WriteLine("Автомобиль с именем {0} ускорился на {1}км/ч. Текущая скорость автомобиля составляет - {2}км/ч", name, acceleration, currentSpeed);
                 CheckEngine(this);
-                if (currentSpeed == 90)                     
+            }
+            if (!CheckEngine(this))                         // Условие для возникновения события
+            {
+                if (DamageEngine != null)                       
                 {
-
+                    DamageEngine($"Двигатель поврежден!");
                 }
-
             }
         }
     }
