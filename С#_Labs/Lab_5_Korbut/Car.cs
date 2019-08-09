@@ -49,20 +49,17 @@ namespace Lab_5_Korbut
             if (_car.maxSpeed - _car.currentSpeed > 10)  Console.WriteLine("\nАвтомобиль продолжает движение!");
             if (_car.maxSpeed - _car.currentSpeed <= 10) Console.WriteLine("\nАвтомобиль продолжает движение! Высокая скорость! ");
             if (_car.currentSpeed == _car.maxSpeed) Console.WriteLine("\nДостигнута максимальная скорость! Двигатель выйдет из строя!");
-            if (_car.currentSpeed > _car.maxSpeed)
-            {
-                _car.engineState = false;
-            }
+            if (_car.currentSpeed > _car.maxSpeed) _car.engineState = false;
             return _car.engineState;
         }
         public void Accelerate( int acceleration)
         {
-            for ( ; engineState == true; currentSpeed += acceleration)
+            for ( ; engineState != false; currentSpeed += acceleration)
             {
-                Console.WriteLine("Автомобиль с именем {0} ускорился на {1}км/ч. Текущая скорость автомобиля составляет - {2}км/ч", name, acceleration, currentSpeed);
                 CheckEngine(this);
+                Console.WriteLine("Автомобиль с именем {0} ускорился на {1}км/ч. Текущая скорость автомобиля составляет - {2}км/ч", name, acceleration, currentSpeed);
             }
-            if (!CheckEngine(this))                         // Условие для возникновения события
+            if (!engineState)                         // Условие для возникновения события (Событие без параметра)
             {
                 if (DamageEngine != null)                       
                 {

@@ -11,11 +11,11 @@ namespace Lab_5_Korbut
         static void Main(string[] args)
         {
             Car newCar = new Car("Ford", 180);
-            newCar.DamageEngine += ShowMeesage;
-            newCar.Accelerate(11);
+            newCar.DamageEngine += ShowMessage;
+            newCar.Accelerate(10);
         }
 
-        public static void ShowMeesage(string message)
+        public static void ShowMessage(string message)
         {
             Console.WriteLine(message);
         }
