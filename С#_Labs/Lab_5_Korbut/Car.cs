@@ -46,8 +46,8 @@ namespace Lab_5_Korbut
         public delegate void LimitTrafficSpeed(int n);          // -//- (для события с параметром)
         public delegate int SpeedHandler(List<int> nameList);
         public event CarStateHandler DamageEngine;              // Событие возникающее при поломке двигателя
-        public event LimitTrafficSpeed Warn;                    // Событие предупреждающее о достижении ограничения скорости
-        public event SpeedHandler AverageSpeed;
+        public event LimitTrafficSpeed SpeedExceed;             // Событие предупреждающее о достижении ограничения скорости
+        public event SpeedHandler MaxSpeedReached;              // Событие по завершению ускорения
 
         private bool CheckEngine()
         {
@@ -80,11 +80,11 @@ namespace Lab_5_Korbut
                 SpeedValues.Add(currentSpeed);
                 if (currentSpeed == n)                  // Условие для возникновения события с параметром
                 {
-                    Warn?.Invoke(currentSpeed);
+                    SpeedExceed?.Invoke(currentSpeed);
                 }
-                if (currentSpeed == maxSpeed)
+                if (currentSpeed == maxSpeed)           // Событие для лямбда-выражения
                 {
-                    AverageSpeed?.Invoke(SpeedValues);
+                    MaxSpeedReached?.Invoke(SpeedValues);
                 }
             }
         }
